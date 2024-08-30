@@ -9,6 +9,7 @@ public class Main {
         Circle circle = new Circle();
         Students[] students = null;
         Person person = null;
+        Day day = null;
 
         while (true) {
             System.out.println("\n1. Nhap sinh vien");
@@ -18,7 +19,8 @@ public class Main {
             System.out.println("5. Su dung ArrayCalculator");
             System.out.println("6. Nhap thong tin Person");
             System.out.println("7. Hien thi thong tin Person");
-            System.out.println("8. Thoat");
+            System.out.println("8. Nhap va hien thi ngay");
+            System.out.println("9. Thoat");
             System.out.print("Chon chuc nang: ");
             int choice = sc.nextInt();
 
@@ -199,6 +201,17 @@ public class Main {
                     }
                     break;
                 case 8:
+                    day = new Day();
+                    System.out.print("Nhap ngay: ");
+                    day.setDay(sc.nextInt());
+                    System.out.print("Nhap thang: ");
+                    day.setMonth(sc.nextInt());
+                    System.out.print("Nhap nam: ");
+                    day.setYear(sc.nextInt());
+                    System.out.println("Ngay da nhap:");
+                    day.display();
+                    break;
+                case 9:
                     System.out.println("Tam biet!");
                     sc.close();
                     return;

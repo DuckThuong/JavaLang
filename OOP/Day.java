@@ -34,5 +34,12 @@ public class Day {
     public void setYear(int year) {
         this.year = year;
     }
+    public int getYear() {
+        return year;
+    }
+
+    public void display() {
+        System.out.printf("%02d/%02d/%04d%n", day, month, year);
+    }
 
 }
