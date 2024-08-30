@@ -10,6 +10,7 @@ public class Main {
         Students[] students = null;
         Person person = null;
         Day day = null;
+        Time time = null;
 
         while (true) {
             System.out.println("\n1. Nhap sinh vien");
@@ -20,7 +21,8 @@ public class Main {
             System.out.println("6. Nhap thong tin Person");
             System.out.println("7. Hien thi thong tin Person");
             System.out.println("8. Nhap va hien thi ngay");
-            System.out.println("9. Thoat");
+            System.out.println("9. Nhap va hien thi thoi gian");
+            System.out.println("10. Thoat");
             System.out.print("Chon chuc nang: ");
             int choice = sc.nextInt();
 
@@ -212,6 +214,64 @@ public class Main {
                     day.display();
                     break;
                 case 9:
+                    time = new Time();
+                    System.out.print("Nhap gio: ");
+                    int hour = sc.nextInt();
+                    System.out.print("Nhap phut: ");
+                    int minute = sc.nextInt();
+                    System.out.print("Nhap giay: ");
+                    int second = sc.nextInt();
+                    time.setTime(hour, minute, second);
+                    
+                    System.out.println("Thoi gian hien tai:");
+                    time.display();
+                    
+                    while (true) {
+                        System.out.println("\nChon thao tac:");
+                        System.out.println("1. Tang 1 giay");
+                        System.out.println("2. Giam 1 giay");
+                        System.out.println("3. Tang 1 phut");
+                        System.out.println("4. Giam 1 phut");
+                        System.out.println("5. Tang 1 gio");
+                        System.out.println("6. Giam 1 gio");
+                        System.out.println("7. Quay lai menu chinh");
+                        System.out.print("Lua chon cua ban: ");
+                        int timeChoice = sc.nextInt();
+                        
+                        switch (timeChoice) {
+                            case 1:
+                                time.nextSecond();
+                                break;
+                            case 2:
+                                time.previousSecond();
+                                break;
+                            case 3:
+                                time.nextMinute();
+                                break;
+                            case 4:
+                                time.previousMinute();
+                                break;
+                            case 5:
+                                time.nextHour();
+                                break;
+                            case 6:
+                                time.previousHour();
+                                break;
+                            case 7:
+                                break;
+                            default:
+                                System.out.println("Lua chon khong hop le.");
+                        }
+                        
+                        if (timeChoice == 7) {
+                            break;
+                        }
+                        
+                        System.out.println("Thoi gian sau thao tac:");
+                        time.display();
+                    }
+                    break;
+                case 10:
                     System.out.println("Tam biet!");
                     sc.close();
                     return;
