@@ -7,7 +7,8 @@ public class Main {
         int n;
         Scanner sc = new Scanner(System.in);
         Circle circle = new Circle();
-        Studens[] students = null;
+        Students[] students = null;
+        Person person = null;
 
         while (true) {
             System.out.println("\n1. Nhap sinh vien");
@@ -15,7 +16,9 @@ public class Main {
             System.out.println("3. Tinh toan hinh tron");
             System.out.println("4. Su dung ham Math");
             System.out.println("5. Su dung ArrayCalculator");
-            System.out.println("6. Thoat");
+            System.out.println("6. Nhap thong tin Person");
+            System.out.println("7. Hien thi thong tin Person");
+            System.out.println("8. Thoat");
             System.out.print("Chon chuc nang: ");
             int choice = sc.nextInt();
 
@@ -23,17 +26,17 @@ public class Main {
                 case 1:
                     System.out.println("Nhap so luong sinh vien: ");
                     n = sc.nextInt();
-                    students = new Studens[n];
+                    students = new Students[n];
                     for (int i = 0; i < n; i++) {
                         System.out.println("Sinh vien " + (i + 1) + ":");
-                        students[i] = new Studens();
-                        students[i].InnerStudens();
+                        students[i] = new Students();
+                        students[i].InnerStudents();
                     }
                     continue;
                 case 2:
                     if (students != null && students.length > 0) {
                         System.out.println("Danh sach sinh vien:");
-                        for (Studens student : students) {
+                        for (Students student : students) {
                             student.display();
                         }
                     } else {
@@ -176,6 +179,26 @@ public class Main {
                     }
                     break;
                 case 6:
+                    person = new Person();
+                    System.out.print("Nhap ten: ");
+                    sc.nextLine();
+                    person.setName(sc.nextLine());
+                    System.out.print("Nhap tuoi: ");
+                    person.setAge(sc.nextInt());
+                    sc.nextLine();
+                    System.out.print("Nhap dia chi: ");
+                    person.setAddress(sc.nextLine());
+                    System.out.println("Da nhap thong tin Person thanh cong.");
+                    break;
+                case 7:
+                    if (person != null) {
+                        System.out.println("Thong tin Person:");
+                        person.display();
+                    } else {
+                        System.out.println("Chua co thong tin Person. Vui long nhap thong tin truoc.");
+                    }
+                    break;
+                case 8:
                     System.out.println("Tam biet!");
                     sc.close();
                     return;

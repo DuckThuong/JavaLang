@@ -2,25 +2,25 @@ package OOP;
 
 import java.util.*;
 
-public class Studens {
+public class Students {
     private String name;
     private int age;
     private String render;
     private double gpa;
     Scanner sc = new Scanner(System.in);
 
-    public Studens() {
+    public Students() {
 
     }
 
-    public Studens(String name, int age, String render, double gpa) {
+    public Students(String name, int age, String render, double gpa) {
         this.name = name;
         this.age = age;
         this.render = render;
         this.gpa = gpa;
     }
 
-    public void InnerStudens() {
+    public void InnerStudents() {
         System.out.println("Nhap ten: ");
         name = sc.next();
         System.out.println("Nhap tuoi: ");
