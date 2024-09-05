@@ -263,5 +263,39 @@ d, Tính đa hình:
                 System.out.println(person2.age);
             }
         }
-
+4. Java Access Modifier:
+- Khái niệm:
+    - Access modifier là các từ khóa được sử dụng để định nghĩa phạm vi truy cập của các thuộc tính và phương thức.
+    - Mục đích:
+    + Ngăn chặn sự truy cập trực tiếp đến dữ liệu của đối tượng.
+    + Cung cấp các phương thức để truy cập và thay đổi dữ liệu.
+    - Các loại access modifier:
+    + Access modifier public:
+        Khái niệm:  
+        - Access modifier public là access modifier có phạm vi truy cập lớn nhất.
+        - Mục đích:
+        + Truy cập được từ bất kỳ đâu.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa public để định nghĩa phương thức.
+    + Access modifier private:
+        Khái niệm:  
+        - Access modifier private là access modifier có phạm vi truy cập nhỏ nhất.
+        - Mục đích:
+        + Truy cập được từ bất kỳ đâu.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa private để định nghĩa phương thức.
+    + Access modifier protected:
+        Khái niệm:  
+        - Access modifier protected là access modifier có phạm vi truy cập nhỏ nhất.
+        - Mục đích:
+        + Truy cập được từ bất kỳ đâu.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa protected để định nghĩa phương thức.
+    + Access modifier default:
+        Khái niệm:  
+        - Access modifier default là access modifier có phạm vi truy cập nhỏ nhất.
+        - Mục đích:
+        + Truy cập được từ bất kỳ đâu.
+        - Cách thức thực hiện:  
+        + Sử dụng từ khóa default để định nghĩa phương thức.    
     
