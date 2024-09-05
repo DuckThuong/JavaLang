@@ -1,4 +1,4 @@
-package OOP;
+package OOP.Encapsulation;
 
 public class Day {
     private int day;

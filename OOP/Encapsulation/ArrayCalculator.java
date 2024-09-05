@@ -1,4 +1,4 @@
-package OOP;
+package OOP.Encapsulation;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = 0;
         students[] students = new students[100];
+        int n = 0;
+
         while (true) {
             System.out.println("\nChon chuc nang:");
             System.out.println("1. Them sinh vien");
@@ -19,15 +20,33 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("Them sinh vien");
-                    System.out.println("Nhap so luong sinh vien: ");
-                    n = sc.nextInt();
-                    students[n] = new students();
-                    students[n].input();
-                    n++;
+                    while (true) {
+                        if (n < students.length) {
+                            students[n] = new students();
+                            students[n].input();
+                            n++;
+
+                            System.out.print("Ban co muon nhap tiep khong? (Y/N): ");
+                            String continueInput = sc.nextLine().trim().toLowerCase();
+                            if (!continueInput.equals("y")) {
+                                break;
+                            }
+                        } else {
+                            System.out.println("Da dat toi da so luong sinh vien.");
+                            break;
+                        }
+                    }
                     break;
                 case 2:
                     System.out.println("Hien thi sinh vien");
-                    students[n].display();
+                    if (n > 0) {
+                        for (int i = 0; i < n; i++) {
+                            System.out.println("\nThong tin sinh vien thu " + (i + 1) + ":");
+                            students[i].display();
+                        }
+                    } else {
+                        System.out.println("Chua co sinh vien nao duoc them.");
+                    }
                     break;
                 case 3:
                     System.out.println("Thoat");

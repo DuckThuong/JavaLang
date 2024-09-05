@@ -1,5 +1,5 @@
 
-package OOP;
+package OOP.Encapsulation;
 
 public class Math {
     public static int abs(int x) {
