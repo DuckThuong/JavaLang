@@ -1,0 +1,267 @@
+Lập trình hướng đối tượng.
+1. Khái niệm:
+- Lập trình hướng đối tượng (OOP) là một mô hình lập trình mà các đối tượng được định nghĩa và sử dụng để mô tả các thực thể trong thế giới thực.
+- Mô hình:
++ Mô hình thực thể - là mô hình dùng để mô tả các thực thể trong thế giới thực.
+- Các tính chất:    
+a, Tính đóng gói:
+    Khái niệm:
+    - Đóng gói là quá trình đóng gói các thuộc tính và phương thức của một đối tượng thành một đơn vị duy nhất.
+    - Mục đích:
+    + Ngăn chặn sự truy cập trực tiếp đến dữ liệu của đối tượng.
+    + Cung cấp các phương thức để truy cập và thay đổi dữ liệu.
+    - Cách thức thực hiện:
+    + Sử dụng các từ khóa như private, protected, public để định nghĩa các thuộc tính và phương thức.
+b, Tính kế thừa:
+    Khái niệm:
+    - Kế thừa là quá trình mở rộng các lớp đã có thành lớp mới.
+    - Mục đích:
+    + Tái sử dụng code.
+    + Tăng tính linh hoạt và mở rộng.
+    - Cách thức thực hiện:
+    + Sử dụng từ khóa extends để kế thừa các lớp.
+c, Tính trừu tượng:
+    Khái niệm:  
+    - Trừu tượng là quá trình giấu đi các chi tiết cụ thể của đối tượng và chỉ hiển thị các thông tin cần thiết.
+    - Mục đích:
+    + Tăng tính linh hoạt và mở rộng.
+    + Ngăn chặn sự truy cập trực tiếp đến dữ liệu của đối tượng.
+    - Cách thức thực hiện:
+    + Sử dụng các từ khóa như abstract, interface để định nghĩa các lớp và phương thức.
+d, Tính đa hình:
+    Khái niệm:
+    - Đa hình là quá trình sử dụng các phương thức có cùng tên nhưng khác nhau về tham số hoặc số lượng tham số.
+    - Mục đích:
+    + Tăng tính linh hoạt và mở rộng.
+    - Cách thức thực hiện:
+    + Sử dụng các từ khóa như override, overload để định nghĩa các phương thức. \
+    - Các phương thức:
+    + Phương thức override:
+        Khái niệm:  
+        - Phương thức override là phương thức được định nghĩa lại trong lớp con để ghi đè lên phương thức cùng tên trong lớp cha.
+        - Mục đích:
+        + Ghi đè lên phương thức cùng tên trong lớp cha.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa override để định nghĩa phương thức.
+        Code ví dụ: 
+        public class Animal {
+            public void makeSound() {
+                System.out.println("Animal is making a sound");
+            }
+        }
+
+        public class Dog extends Animal {
+            @Override
+            public void makeSound() {   
+                System.out.println("Dog is making a sound");
+            }
+        }
+
+        public class Cat extends Animal {
+            @Override
+            public void makeSound() {
+                System.out.println("Cat is making a sound");
+            }   
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Animal myAnimal = new Animal();
+                Animal myDog = new Dog();
+                Animal myCat = new Cat();
+
+                myAnimal.makeSound();
+                myDog.makeSound();
+                myCat.makeSound();
+            }
+        }
+        
+    + Phương thức overload:
+        Khái niệm:
+        - Phương thức overload là phương thức được định nghĩa lại trong lớp con để ghi đè lên phương thức cùng tên trong lớp cha.
+        - Mục đích:
+        + Ghi đè lên phương thức cùng tên trong lớp cha.
+        - Cách thức thực hiện:
+            + Sử dụng từ khóa overload để định nghĩa phương thức.   
+        Code ví dụ:
+        public class MathUtils {
+            public int add(int a, int b) {
+                return a + b;
+            }
+
+            public double add(double a, double b) {
+                return a + b;
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                MathUtils mathUtils = new MathUtils();
+                System.out.println(mathUtils.add(2, 3));
+                System.out.println(mathUtils.add(2.5, 3.5));
+            }
+        }       
+2. Java Method:
+- Khái niệm:
+    - Phương thức là một khối lệnh được định nghĩa trong một lớp hoặc interface.
+    - Mục đích:
+    + Thực hiện một hành động cụ thể.
+    + Tăng tính linh hoạt và mở rộng.
+    - Cách thức thực hiện:
+    + Sử dụng từ khóa public, private, protected, static, final, abstract, synchronized, native, strictfp để định nghĩa phương thức.
+    - Các loại phương thức:
+    + Phương thức khởi tạo:
+        Khái niệm:
+        - Phương thức khởi tạo là phương thức được định nghĩa trong lớp để khởi tạo đối tượng.
+        - Mục đích:
+        + Khởi tạo đối tượng.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa constructor để định nghĩa phương thức.    
+        Code ví dụ:
+        public class Person {
+            private String name;
+            private int age;
+
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age; 
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Person person = new Person("John", 20);
+                System.out.println(person.name);
+                System.out.println(person.age);
+            }       
+    + Phương thức không trả về:
+        Khái niệm:
+        - Phương thức không trả về là phương thức không trả về giá trị.
+        - Mục đích:
+        + Thực hiện một hành động cụ thể.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa void để định nghĩa phương thức.
+        Code ví dụ: 
+        public class MathUtils {
+            public void printMessage() {
+                System.out.println("Hello, World!");
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                MathUtils mathUtils = new MathUtils();
+                mathUtils.printMessage();
+            }
+        }
+    + Phương thức trả về:
+        Khái niệm:
+        - Phương thức trả về là phương thức trả về giá trị.
+        - Mục đích:
+        + Trả về giá trị.   
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa return để trả về giá trị.
+        Code ví dụ:
+        public class MathUtils {
+            public int add(int a, int b) {
+                return a + b;
+            }
+        }       
+
+        public class Main {
+            public static void main(String[] args) {
+                MathUtils mathUtils = new MathUtils();
+                System.out.println(mathUtils.add(2, 3));
+            }
+        }
+3. Java Constructor:
+- Khái niệm:
+    - Constructor là phương thức đặc biệt được sử dụng để khởi tạo đối tượng.
+    - Mục đích:
+    + Khởi tạo đối tượng.
+    - Cách thức thực hiện:
+    + Sử dụng từ khóa constructor để định nghĩa phương thức.
+    - Các loại constructor:
+    + Constructor không tham số:
+        Khái niệm:
+        - Constructor không tham số là constructor không có tham số.
+        - Mục đích:
+        + Khởi tạo đối tượng.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa constructor để định nghĩa phương thức.
+        Code ví dụ:
+        public class Person {   
+            private String name;
+            private int age;
+
+            public Person() {
+                this.name = "John";
+                this.age = 20;
+            }
+        }               
+
+        public class Main {
+            public static void main(String[] args) {
+                Person person = new Person();
+                System.out.println(person.name);
+                System.out.println(person.age);
+            }
+        }
+    + Constructor có tham số:
+        Khái niệm:
+        - Constructor có tham số là constructor có tham số.
+        - Mục đích:
+        + Khởi tạo đối tượng.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa constructor để định nghĩa phương thức.
+        Code ví dụ:
+        public class Person {
+            private String name;
+            private int age;
+
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Person person = new Person("John", 20);
+                System.out.println(person.name);
+                System.out.println(person.age);
+            }
+        }
+    + Constructor sao chép: 
+        Khái niệm:
+        - Constructor sao chép là constructor sử dụng để sao chép đối tượng.
+        - Mục đích:
+        + Sao chép đối tượng.
+        - Cách thức thực hiện:
+        + Sử dụng từ khóa constructor để định nghĩa phương thức.
+        Code ví dụ:
+        public class Person {
+            private String name;
+            private int age;
+
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            public Person(Person person) {
+                this.name = person.name;
+                this.age = person.age;
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Person person1 = new Person("John", 20);
+                Person person2 = new Person(person1);
+                System.out.println(person2.name);
+                System.out.println(person2.age);
+            }
+        }
+
+    
