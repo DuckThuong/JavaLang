@@ -1,4 +1,4 @@
-package OOP.Information;
+package OOP.Inheritance;
 
 import java.util.Scanner;
 
